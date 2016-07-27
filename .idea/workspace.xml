@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3ca948e-8197-47f3-b1a5-024ffcbc1374" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tour.py" afterPath="$PROJECT_DIR$/tour.py" />
     </list>
     <ignored path="Knights-Tour.iws" />
@@ -28,9 +27,12 @@
       <file leaf-file-name="tour.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tour.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
-              <folding />
+            <state relative-caret-position="-290">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#308#743#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -378,9 +380,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tour.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="-290">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#308#743#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
