@@ -1,52 +1,31 @@
-import chess_py
-from copy import deepcopy as cp
+from chess_py import *
 
-class Node(object):
-    def __init__(self, head):
-        self.head = head
-        self.visited = False
-        self.tails = []
+empty = [[None for _ in range(8)] for _ in range(8)]
+my_board = Board(empty)
 
-    def add_tails(self, tails):
-        self.tails.extend(tails)
+knight = Knight(color.white, Location(0, 0))
+my_board.place_piece_at_square(knight, Location(0, 0)) #Change starting point here
 
-    def number_of_tails(self):
-        connections = 0
-        for tail in self.tails:
-            if not tail.visited:
-                connections += 1
-        return connections
+moves = knight.possible_moves(my_board)
+while len(moves) > 0:
+    print(my_board)
+    corner_move = None
+    min_poss = None
+    current_loc = knight.location
 
+    for move in moves:
+        my_board.update(move)
+        my_board.place_piece_at_square(Pawn(color.white, current_loc), current_loc)
+        poss_len = len(knight.possible_moves(my_board))
 
-empty = [
-    [None, None, None, None, None, None, None, None],
-    [None, None, None, None, None, None, None, None],
-    [None, None, None, None, None, None, None, None],
-    [None, None, None, None, None, None, None, None],
-    [None, None, None, None, None, None, None, None],
-    [None, None, None, None, None, None, None, None],
-    [None, None, None, None, None, None, None, None],
-    [None, None, None, None, None, None, None, None],
-]
+        if min_poss is None or min_poss > poss_len:
+            corner_move = move
+            min_poss = poss_len
 
-my_board = chess_py.Board(empty)
-empty_board = chess_py.Board(empty)
+        my_board.move_piece(move.end_loc, current_loc)
 
-knight_loc = chess_py.Location(0, 0)
+    my_board.update(corner_move)
+    my_board.place_piece_at_square(Pawn(color.white, current_loc), current_loc)
+    moves = knight.possible_moves(my_board)
 
-tour_knight = chess_py.Knight(chess_py.Color.init_white(), knight_loc)
-my_board.place_piece_at_square(tour_knight, knight_loc)
-
-def next_squares(location):
-    return chess_py.Knight(chess_py.Color.init_white(), location).possible_moves(empty_board)
-
-node_graph = cp(empty)
-
-for i in range(len(node_graph)):
-    for j in range(len(node_graph[i])):
-        node_graph[i][j] = Node(chess_py.Location(i, j))
-
-for i in range(len(node_graph)):
-    for j in range(len(node_graph[i])):
-        node_graph[i][j].add_tails(next_squares(chess_py.Location(i, j)))
-
+print(my_board)
