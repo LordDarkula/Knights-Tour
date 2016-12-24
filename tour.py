@@ -6,7 +6,10 @@ class Fill_square:
 
     def __init__(self):
         __class__.sym += 1
-        self.symbol = str(__class__.sym)
+        if __class__.sym > 9:
+            self.symbol = str(__class__.sym)
+        else:
+            self.symbol = str(0) + str(__class__.sym)
 
     def __str__(self):
         return self.symbol
