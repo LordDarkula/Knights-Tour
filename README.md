@@ -5,7 +5,7 @@
 Hueristic solution to [Knight's Tour](https://en.wikipedia.org/wiki/Knight's_tour) problem.
 
 # License
-This is available under the MIT license. See the LICENSE file for more info. 
+This is available under the MIT license. See the [LICENSE](https://github.com/LordDarkula/Knights-Tour/blob/master/LICENSE) file for more info. 
 Copyright © 2016 Aubhro Sengupta. All rights reserved.
 
 # Installation
